@@ -1,0 +1,20 @@
+.content {
+    width: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dialog {
+    padding: 64px;
+}
+
+.connectButton {
+    margin-bottom: 12px !important;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}

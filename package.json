@@ -3,12 +3,31 @@
   "version": "0.1.0",
   "description": "UX-focused web3 auth for your app",
   "author": "Buildship",
-  "keywords": ["react", "web3", "ui", "metamask", "walletconnect", "magic"],
+  "keywords": [
+    "buildship",
+    "web3",
+    "ethereum",
+    "metamask",
+    "rainbow",
+    "walletconnect",
+    "walletlink",
+    "coinbase",
+    "magic",
+    "web3modal",
+    "web3auth",
+    "web3react"
+  ],
   "private": false,
-  "files": [ "build", "README.md" ],
+  "files": [
+    "build",
+    "README.md"
+  ],
   "main": "build/index.js",
   "module": "build/index.es.js",
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.4.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -50,6 +69,7 @@
     "@rollup/plugin-node-resolve": "^13.1.3",
     "rollup": "^2.67.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.31.2"
+    "rollup-plugin-typescript2": "^0.31.2",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }
