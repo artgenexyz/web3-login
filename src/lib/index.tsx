@@ -1,3 +1,5 @@
 import { ConnectWeb3Modal } from "./components/ConnectWeb3Modal";
+import { Web3Provider } from "./components/Web3Provider";
+import { useWeb3, useSwitchNetwork } from "./hooks";
 
-export { ConnectWeb3Modal }
+export { ConnectWeb3Modal, Web3Provider, useWeb3, useSwitchNetwork }

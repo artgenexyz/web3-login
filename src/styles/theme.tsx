@@ -78,7 +78,7 @@ export const theme = createTheme({
         MuiInputLabel: {
             styleOverrides: {
                 root: {
-                    fontSize: "15px",
+                    fontSize: "16px",
                     lineHeight: "24px",
                     transform: "translate(16px, 16px) scale(1)",
                     color: "#9D9FA3",
@@ -112,7 +112,7 @@ export const theme = createTheme({
         fontFamily: "Inter, San Francisco, Roboto, Helvetica, sans-serif",
         button: {
             color: "#fff",
-            fontSize: "18px !important",
+            fontSize: "16px !important",
             textTransform: "none",
         },
         h4: {

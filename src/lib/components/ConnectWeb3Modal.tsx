@@ -1,20 +1,47 @@
 import { Modal } from "./Modal";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import styles from "./Modal/Modal.module.css"
-import { wallets } from "../constants";
 import { ConnectButton } from "./ConnectButton";
+import { useWeb3 } from "@3rdweb/hooks"
+import { useState } from "react";
+import { MagicEmailModal } from "./MagicEmailModal";
+import { connectorsMetadata } from "../connectors";
 
-export const ConnectWeb3Modal = () => {
+export const ConnectWeb3Modal = ({ open, setOpen }) => {
+    const { connectWallet } = useWeb3()
+    const [selectedConnector, setSelectedConnector] = useState(undefined)
+
+    const connect = (connector) => {
+        if (connector === "magic") {
+            setSelectedConnector("magic")
+            return
+        }
+        connectWallet(connector).then(() => {
+            setOpen(false)
+        })
+    }
+
+    if (selectedConnector === "magic") {
+        return <MagicEmailModal open={true} />
+    }
+
     return <Modal
-        open={true}
+        open={open}
+        setOpen={setOpen}
         title="Sign in with wallet">
         <div className={styles.content}>
-            {/*@ts-ignore*/}
+            {/* @ts-ignore */}
             <Typography sx={{ mt: 2, mb: 5 }} variant="description">
                 Connect your wallet to sign in. If you don't have a wallet, sign in with email.
             </Typography>
-            {Object.values(wallets).map(({ icon, name }) => (
-                <ConnectButton icon={icon}>
+            {Object.entries(connectorsMetadata).map(([key, { icon, name }], i) => (
+                <ConnectButton
+                    key={key}
+                    sx={i !== 0 ? {
+                        mt: 3
+                    } : undefined}
+                    onClick={() => connect(key)}
+                    icon={icon}>
                     {name}
                 </ConnectButton>
             ))}

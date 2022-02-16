@@ -1,29 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import { Dialog, DialogContent, DialogTitle, ThemeProvider } from "@mui/material";
 import styles from "./Modal.module.css"
 import { theme } from "../../../styles/theme";
 
 interface ModalProps {
-    open?: boolean;
+    open: boolean;
+    setOpen: (x: boolean) => void;
     title?: any;
     children?: any;
 }
 
 export const Modal = ({
     open,
+    setOpen,
     title,
     children
 }: ModalProps) => {
-    const [isOpen, setIsOpen] = useState(open ?? false)
 
     const handleClose = () => {
-        setIsOpen(false);
+        setOpen(false);
     }
 
     return (
         <ThemeProvider theme={theme}>
             <Dialog
-                open={isOpen}
+                open={open}
                 onClose={handleClose}>
                     <DialogTitle className={styles.title}>
                         {title}
