@@ -1,7 +1,7 @@
 {
   "name": "@buildship/web3-login",
   "version": "0.1.0",
-  "description": "UX-focused web3 auth for your app",
+  "description": "UX-focused web3 auth for your React app",
   "author": "Buildship",
   "keywords": [
     "buildship",
@@ -71,5 +71,10 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
     "typescript-plugin-css-modules": "^3.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buildship-dev/web3-login.git"
+  },
+  "license": "Apache-2.0"
 }

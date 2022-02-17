@@ -1,7 +1,6 @@
 import React from "react";
-import { Dialog, DialogContent, DialogTitle, ThemeProvider } from "@mui/material";
+import { Dialog, DialogContent, DialogTitle } from "@mui/material";
 import styles from "./Modal.module.css"
-import { theme } from "../../../styles/theme";
 
 interface ModalProps {
     open: boolean;
@@ -22,17 +21,15 @@ export const Modal = ({
     }
 
     return (
-        <ThemeProvider theme={theme}>
-            <Dialog
-                open={open}
-                onClose={handleClose}>
-                    <DialogTitle className={styles.title}>
-                        {title}
-                    </DialogTitle>
-                    <DialogContent>
-                        {children}
-                    </DialogContent>
-            </Dialog>
-        </ThemeProvider>
+        <Dialog
+            open={open}
+            onClose={handleClose}>
+                <DialogTitle className={styles.title}>
+                    {title}
+                </DialogTitle>
+                <DialogContent>
+                    {children}
+                </DialogContent>
+        </Dialog>
     )
 }

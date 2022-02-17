@@ -3,13 +3,13 @@ import './App.css';
 import { ConnectWeb3Modal } from "./package";
 import { Web3Provider } from "./package";
 import { defaultConnectors } from "./package/connectors";
-import { theme } from "./styles/theme";
+import { defaultTheme } from "./styles/theme";
 
 function App() {
     const [open, setOpen] = useState(true)
     return (
         <Web3Provider
-            theme={theme}
+            theme={defaultTheme}
             supportedChainIds={[1, 4]}
             connectors={defaultConnectors}>
           <ConnectWeb3Modal open={open} setOpen={setOpen} />
