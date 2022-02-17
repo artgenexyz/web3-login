@@ -2,6 +2,9 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
+import autoprefixer from 'autoprefixer';
+import postcss from 'rollup-plugin-postcss';
+import json from '@rollup/plugin-json';
 
 // this override is needed because Module format cjs does not support top-level await
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -15,12 +18,14 @@ const config = {
     input: 'src/lib/index.tsx',
     output: [
         {
-            file: packageJson.main,
+            // file: packageJson.main,
+            dir: packageJson.main,
             format: 'cjs', // commonJS
             sourcemap: true,
         },
         {
-            file: packageJson.module,
+            // file: packageJson.module,
+            dir: packageJson.module,
             format: 'esm', // ES Modules
             sourcemap: true,
         },
@@ -36,6 +41,12 @@ const config = {
                 exclude: ['**/*.stories.*'],
             },
         }),
+        postcss({
+            plugins: [autoprefixer()],
+            sourceMap: true,
+            extract: true
+        }),
+        json(),
         commonjs({
             exclude: 'node_modules',
             ignoreGlobal: true,
