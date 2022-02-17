@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import { ConnectWeb3Modal } from "./lib";
-import { Web3Provider } from "./lib/components/Web3Provider";
-import { defaultConnectors } from "./lib/connectors";
+import { ConnectWeb3Modal } from "./package";
+import { Web3Provider } from "./package";
+import { defaultConnectors } from "./package/connectors";
 import { theme } from "./styles/theme";
 
 function App() {

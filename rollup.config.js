@@ -15,7 +15,8 @@ const globals = {
 };
 
 const config = {
-    input: 'src/lib/index.tsx',
+    preserveModules: true,
+    input: 'src/package/index.tsx',
     output: [
         {
             // file: packageJson.main,
@@ -37,7 +38,7 @@ const config = {
         typescript({
             useTsconfigDeclarationDir: true,
             tsconfigOverride: {
-                include: ["src/lib"],
+                include: ["src/package"],
                 exclude: ['**/*.stories.*'],
             },
         }),
