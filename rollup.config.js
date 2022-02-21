@@ -15,18 +15,16 @@ const globals = {
 };
 
 const config = {
-    preserveModules: true,
     input: 'src/package/index.tsx',
+    inlineDynamicImports: true,
     output: [
         {
-            // file: packageJson.main,
-            dir: packageJson.main,
+            file: packageJson.main,
             format: 'cjs', // commonJS
             sourcemap: true,
         },
         {
-            // file: packageJson.module,
-            dir: packageJson.module,
+            file: packageJson.module,
             format: 'esm', // ES Modules
             sourcemap: true,
         },
