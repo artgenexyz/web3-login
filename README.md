@@ -1,4 +1,4 @@
-# @buildship/web3-login
+# @buildship/web3-login (beta)
 
 <img src="public/screenshot.png" width="500" />
 
