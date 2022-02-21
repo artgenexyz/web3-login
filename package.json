@@ -1,6 +1,6 @@
 {
   "name": "@buildship/web3-login",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "UX-focused web3 auth for your React app",
   "author": "Buildship",
   "keywords": [
