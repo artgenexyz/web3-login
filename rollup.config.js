@@ -5,6 +5,7 @@ import typescript from 'rollup-plugin-typescript2';
 import autoprefixer from 'autoprefixer';
 import postcss from 'rollup-plugin-postcss';
 import json from '@rollup/plugin-json';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 // this override is needed because Module format cjs does not support top-level await
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -31,7 +32,7 @@ const config = {
     ],
     plugins: [
         peerDepsExternal(),
-        resolve(),
+        resolve({ preferBuiltins: true }),
         commonjs(),
         typescript({
             useTsconfigDeclarationDir: true,
@@ -50,6 +51,7 @@ const config = {
             exclude: 'node_modules',
             ignoreGlobal: true,
         }),
+        nodePolyfills()
     ],
     external: Object.keys(globals),
 };
