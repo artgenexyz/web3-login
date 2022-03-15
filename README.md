@@ -75,9 +75,12 @@ Follow Material UI [guide on theming](https://mui.com/customization/theming/), t
 [Default theme example](https://github.com/buildship-dev/web3-login/blob/main/src/styles/theme.tsx)
 
 ## Plans
-- Native support for Ledger
-- Support hooks for ENS
-- Improve experience for Metamask users on mobile
+- [ ] Support hooks for backend auth
+- [ ] Improve experience for Metamask users on mobile
+- [ ] Fix WalletConnect mobile deeplink issues
+- [ ] Vanilla JS (pure JS) support for in-browser games, etc.
+- [ ] Native support for Ledger
+- [ ] Support hooks for ENS
 
 ## Contributing & issues
 Feel free to open a PR or an issue! Contact us at https://buildship.dev/ if you have additional questions
