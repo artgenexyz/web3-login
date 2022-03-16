@@ -32,7 +32,7 @@ const config = {
     ],
     plugins: [
         peerDepsExternal(),
-        resolve({ preferBuiltins: true }),
+        resolve({ exportConditions: ['node'], preferBuiltins : false }),
         commonjs(),
         typescript({
             useTsconfigDeclarationDir: true,
