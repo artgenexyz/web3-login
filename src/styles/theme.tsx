@@ -128,6 +128,8 @@ export const defaultTheme = createTheme({
             fontSize: "16px !important",
             textTransform: "none",
             whiteSpace: "pre-wrap",
+            margin: 0,
+            padding: 0
         },
         h4: {
             fontWeight: 600
@@ -143,7 +145,8 @@ export const defaultTheme = createTheme({
         // @ts-ignore
         description: {
             fontWeight: 300,
-            color: "rgba(156, 163, 175)"
+            color: "rgba(156, 163, 175)",
+            lineHeight: 1.5
         },
 
     },

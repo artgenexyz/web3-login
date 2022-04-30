@@ -39,9 +39,7 @@ export const ConnectWeb3Modal = ({ open, setOpen }) => {
     >
       <div className={styles.content}>
         {/* @ts-ignore */}
-        <Typography sx={{ mt: 2, mb: 5 }}
-          // variant="description"
-        >
+        <Typography sx={{ mt: 2, mb: 5 }} variant="description">
           Connect your wallet to sign in. If you don't have a wallet, sign in with email.
         </Typography>
         {Object.entries(connectorsMetadata).map(([key, { icon, name }], i) => (
