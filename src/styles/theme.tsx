@@ -8,6 +8,19 @@ export const defaultTheme = createTheme({
     },
     spacing: [0, 4, 8, 12, 16, 24, 32, 64],
     components: {
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    "@media only screen and (max-width: 540px)": {
+                          padding: "40px 10px",
+                          margin: 0,
+                          width: "100%",
+                          height: "100vh",
+                          borderRadius: 0
+                      }
+                }
+            }
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
