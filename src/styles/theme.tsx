@@ -127,6 +127,7 @@ export const defaultTheme = createTheme({
             color: "#fff",
             fontSize: "16px !important",
             textTransform: "none",
+            whiteSpace: "pre-wrap",
         },
         h4: {
             fontWeight: 600
@@ -143,6 +144,7 @@ export const defaultTheme = createTheme({
         description: {
             fontWeight: 300,
             color: "rgba(156, 163, 175)"
-        }
+        },
+
     },
 });

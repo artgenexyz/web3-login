@@ -3,12 +3,12 @@
   margin: 0 !important;
   min-width: unset !important;
   border-radius: 5px !important;
-};
+}
 
 .topLeft {
   position: absolute !important;
   top: 10px !important;
-  left: 0 !important;
+  left: 10px !important;
 }
 
 .topRight {

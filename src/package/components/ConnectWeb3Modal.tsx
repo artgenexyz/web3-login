@@ -23,7 +23,12 @@ export const ConnectWeb3Modal = ({ open, setOpen }) => {
 
 
   if (selectedConnector === "magic") {
-    return <MagicEmailModal open={true} />
+    return (
+      <MagicEmailModal 
+        open={true}
+        setSelectedConnector={setSelectedConnector}
+      />
+    );
   }
 
   return (
