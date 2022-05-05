@@ -35,6 +35,7 @@
   },
   "scripts": {
     "dev": "craco start",
+    "build-dev": "craco build",
     "build": "rollup -c"
   },
   "eslintConfig": {
