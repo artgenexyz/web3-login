@@ -8,6 +8,19 @@ export const defaultTheme = createTheme({
     },
     spacing: [0, 4, 8, 12, 16, 24, 32, 64],
     components: {
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    "@media only screen and (max-width: 540px)": {
+                          padding: "40px 10px",
+                          margin: 0,
+                          width: "100%",
+                          height: "100vh",
+                          borderRadius: 0
+                      }
+                }
+            }
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
@@ -114,6 +127,9 @@ export const defaultTheme = createTheme({
             color: "#fff",
             fontSize: "16px !important",
             textTransform: "none",
+            whiteSpace: "pre-wrap",
+            margin: 0,
+            padding: 0
         },
         h4: {
             fontWeight: 600
@@ -129,7 +145,9 @@ export const defaultTheme = createTheme({
         // @ts-ignore
         description: {
             fontWeight: 300,
-            color: "rgba(156, 163, 175)"
-        }
+            color: "rgba(156, 163, 175)",
+            lineHeight: 1.5
+        },
+
     },
 });

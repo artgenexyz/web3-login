@@ -1,20 +1,27 @@
 .content {
-    width: 300px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  width: 350px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .dialog {
-    padding: 64px;
+  padding: 64px;
 }
 
 .connectButton {
-    margin-bottom: 12px !important;
-    width: 100%;
+  margin-bottom: 12px !important;
+  width: 100%;
 }
 
 .title {
-    text-align: center;
+  margin-top: 15px !important;
+  text-align: center;
+}
+
+@media only screen and (max-width: 540px) {
+  .content {
+    width: 100%;
+  }
 }
