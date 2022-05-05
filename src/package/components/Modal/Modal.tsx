@@ -50,7 +50,7 @@ export const Modal = ({
           orientation={"top-left"}
         >
           <Typography>
-            {"  Go Back"}
+            {"  Back"}
           </Typography>
         </IconButton>
       )}
