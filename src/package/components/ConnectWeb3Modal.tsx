@@ -17,7 +17,7 @@ export const ConnectWeb3Modal = ({ open, setOpen }) => {
       return
     }
     connectWallet(connector).then(() => {
-      setOpen(false)
+        setOpen(false)
     })
   };
 
