@@ -1,4 +1,4 @@
-import React$1, { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Button, Dialog, Typography, DialogTitle, DialogContent, TextField, createTheme, ThemeProvider } from '@mui/material';
 import { useWeb3, ThirdwebWeb3Provider } from '@3rdweb/hooks';
 export { useSwitchNetwork, useWeb3 } from '@3rdweb/hooks';
@@ -19,12 +19,12 @@ const IconButton = (props) => {
     }
     return classNames.join(" ");
   }, [orientation]);
-  return /* @__PURE__ */ React$1.createElement(Button, {
+  return /* @__PURE__ */ React.createElement(Button, {
     variant: "text",
     onClick,
     className,
     ...props
-  }, icon && /* @__PURE__ */ React$1.createElement("img", {
+  }, icon && /* @__PURE__ */ React.createElement("img", {
     style: { width: 15, height: 15 },
     src: icon.src,
     alt: icon.alt
@@ -46,38 +46,38 @@ const Modal = ({
   const handleBack = () => {
     setBack(null);
   };
-  return /* @__PURE__ */ React$1.createElement(Dialog, {
+  return /* @__PURE__ */ React.createElement(Dialog, {
     open,
     onClose: handleClose
-  }, /* @__PURE__ */ React$1.createElement(IconButton, {
+  }, /* @__PURE__ */ React.createElement(IconButton, {
     icon: {
       src: "close.svg",
       alt: "close-icon"
     },
     onClick: handleClose,
     orientation: "top-right"
-  }), setBack && /* @__PURE__ */ React$1.createElement(IconButton, {
+  }), setBack && /* @__PURE__ */ React.createElement(IconButton, {
     icon: {
       src: "chevron-left.svg",
       alt: "close-button"
     },
     onClick: handleBack,
     orientation: "top-left"
-  }, /* @__PURE__ */ React$1.createElement(Typography, null, "  Back")), /* @__PURE__ */ React$1.createElement(DialogTitle, {
+  }, /* @__PURE__ */ React.createElement(Typography, null, "  Back")), /* @__PURE__ */ React.createElement(DialogTitle, {
     className: styles$1.title
-  }, title), /* @__PURE__ */ React$1.createElement(DialogContent, null, children));
+  }, title), /* @__PURE__ */ React.createElement(DialogContent, null, children));
 };
 
 const styles = ".connectButton {\n    width: 100%;\n}\n";
 
 const ConnectButton = (props) => {
   const { icon, onClick, children } = props;
-  return /* @__PURE__ */ React$1.createElement(Button, {
+  return /* @__PURE__ */ React.createElement(Button, {
     variant: "contained",
     onClick,
     className: styles.connectButton,
     ...props
-  }, icon && /* @__PURE__ */ React$1.createElement("img", {
+  }, icon && /* @__PURE__ */ React.createElement("img", {
     style: { width: 24, marginRight: 8 },
     src: icon,
     alt: "wallet-icon"
@@ -339,10 +339,10 @@ const Web3Provider = ({
   children,
   ...props
 }) => {
-  return /* @__PURE__ */ React$1.createElement(ThirdwebWeb3Provider, {
+  return /* @__PURE__ */ React.createElement(ThirdwebWeb3Provider, {
     ...props,
     connectors
-  }, /* @__PURE__ */ React$1.createElement(ThemeProvider, {
+  }, /* @__PURE__ */ React.createElement(ThemeProvider, {
     theme
   }, children));
 };

@@ -1,7 +1,7 @@
 import { ButtonProps } from '@mui/material/Button/Button';
+import React from 'react';
 import { ThirdwebWeb3ProviderProps, IThirdwebContext } from '@3rdweb/hooks';
 export { useSwitchNetwork, useWeb3 } from '@3rdweb/hooks';
-import React from 'react';
 import { Theme } from '@mui/material';
 
 declare const ConnectWeb3Modal: ({ open, setOpen }: {
