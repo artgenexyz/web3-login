@@ -1,3 +1,4 @@
+import React from "react";
 import { useWeb3 } from "@3rdweb/hooks";
 import { Modal } from "./Modal";
 import styles from "./Modal/Modal.module.css";

@@ -1,5 +1,5 @@
-import { IThirdwebContext, ThirdwebWeb3Provider, ThirdwebWeb3ProviderProps } from "@3rdweb/hooks";
 import React from "react";
+import { IThirdwebContext, ThirdwebWeb3Provider, ThirdwebWeb3ProviderProps } from "@3rdweb/hooks";
 import { Theme, ThemeProvider } from "@mui/material";
 
 import { defaultConnectors } from "../connectors";

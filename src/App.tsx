@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { useWeb3, ConnectWeb3Modal, Web3Provider } from "./package";
 import { defaultConnectors } from "./package/connectors";

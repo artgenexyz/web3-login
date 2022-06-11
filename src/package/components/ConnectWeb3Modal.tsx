@@ -1,9 +1,9 @@
+import React, { useState } from "react";
 import { Modal } from "./Modal";
 import { Typography } from "@mui/material";
 import styles from "./Modal/Modal.module.css"
 import { ConnectButton } from "./ConnectButton";
 import { useWeb3 } from "@3rdweb/hooks"
-import { useState } from "react";
 import { MagicEmailModal } from "./MagicEmailModal";
 import { connectorsMetadata } from "../connectors";
 
