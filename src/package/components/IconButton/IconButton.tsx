@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { Button } from "@mui/material";
+import path from "path";
 import styles from "./IconButton.module.css"
 import { ButtonProps } from "@mui/material/Button/Button";
 
@@ -12,6 +13,8 @@ interface IconButtonProps extends ButtonProps {
 
 export const IconButton = (props: IconButtonProps) => {
   const { icon, onClick, orientation, children } = props;
+
+  const iconPath = path.join('./', icon.src);
 
   const className = useMemo(() => {
     const classNames = [styles.iconButton];
@@ -36,7 +39,7 @@ export const IconButton = (props: IconButtonProps) => {
       className={className}
       {...props}
     >
-      {icon && (<img style={{ width: 15, height: 15 }} src={icon.src} alt={icon.alt} />)}
+      {icon && (<img style={{ width: 15, height: 15 }} src={iconPath} alt={icon.alt} />)}
       {children && children}
     </Button>
   )
