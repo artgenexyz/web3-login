@@ -1,81 +1,39 @@
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __objRest = (source, exclude) => {
-  var target = {};
-  for (var prop in source)
-    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
-      target[prop] = source[prop];
-  if (source != null && __getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(source)) {
-      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
-        target[prop] = source[prop];
-    }
-  return target;
-};
+import React$1, { useMemo, useState } from 'react';
+import { Button, Dialog, Typography, DialogTitle, DialogContent, TextField, createTheme, ThemeProvider } from '@mui/material';
+import { useWeb3, ThirdwebWeb3Provider } from '@3rdweb/hooks';
+export { useSwitchNetwork, useWeb3 } from '@3rdweb/hooks';
 
-// src/package/components/Modal/Modal.tsx
-import React3 from "react";
+const styles$2 = ".iconButton {\n  padding: 10px !important;\n  margin: 0 !important;\n  min-width: unset !important;\n  border-radius: 5px !important;\n}\n\n.topLeft {\n  position: absolute !important;\n  top: 10px !important;\n  left: 10px !important;\n}\n\n.topRight {\n  position: absolute !important;\n  top: 10px !important;\n  right: 10px !important;\n}";
 
-// src/package/components/IconButton/IconButton.tsx
-import React2, { useMemo } from "react";
-import { Button } from "@mui/material";
-
-// src/package/components/IconButton/IconButton.module.css
-var _default = {};
-
-// src/package/components/IconButton/IconButton.tsx
-var IconButton = (props) => {
+const IconButton = (props) => {
   const { icon, onClick, orientation, children } = props;
   const className = useMemo(() => {
-    const classNames = [_default.iconButton];
+    const classNames = [styles$2.iconButton];
     switch (orientation) {
       case "top-left":
-        classNames.push(_default.topLeft);
+        classNames.push(styles$2.topLeft);
         break;
       case "top-right":
-        classNames.push(_default.topRight);
-        break;
-      default:
+        classNames.push(styles$2.topRight);
         break;
     }
     return classNames.join(" ");
   }, [orientation]);
-  return /* @__PURE__ */ React2.createElement(Button, __spreadValues({
+  return /* @__PURE__ */ React$1.createElement(Button, {
     variant: "text",
     onClick,
-    className
-  }, props), icon && /* @__PURE__ */ React2.createElement("img", {
+    className,
+    ...props
+  }, icon && /* @__PURE__ */ React$1.createElement("img", {
     style: { width: 15, height: 15 },
     src: icon.src,
     alt: icon.alt
   }), children && children);
 };
 
-// src/package/components/Modal/Modal.tsx
-import { Dialog, DialogContent, DialogTitle, Typography } from "@mui/material";
+const styles$1 = ".content {\n  width: 350px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n}\n\n.dialog {\n  padding: 64px;\n}\n\n.connectButton {\n  margin-bottom: 12px !important;\n  width: 100%;\n}\n\n.title {\n  margin-top: 15px !important;\n  text-align: center;\n}\n\n@media only screen and (max-width: 540px) {\n  .content {\n    width: 100%;\n  }\n}";
 
-// src/package/components/Modal/Modal.module.css
-var _default2 = {};
-
-// src/package/components/Modal/Modal.tsx
-var Modal = ({
+const Modal = ({
   open,
   setOpen,
   title,
@@ -88,61 +46,45 @@ var Modal = ({
   const handleBack = () => {
     setBack(null);
   };
-  return /* @__PURE__ */ React3.createElement(Dialog, {
+  return /* @__PURE__ */ React$1.createElement(Dialog, {
     open,
     onClose: handleClose
-  }, /* @__PURE__ */ React3.createElement(IconButton, {
+  }, /* @__PURE__ */ React$1.createElement(IconButton, {
     icon: {
       src: "close.svg",
       alt: "close-icon"
     },
     onClick: handleClose,
     orientation: "top-right"
-  }), setBack && /* @__PURE__ */ React3.createElement(IconButton, {
+  }), setBack && /* @__PURE__ */ React$1.createElement(IconButton, {
     icon: {
       src: "chevron-left.svg",
       alt: "close-button"
     },
     onClick: handleBack,
     orientation: "top-left"
-  }, /* @__PURE__ */ React3.createElement(Typography, null, "  Back")), /* @__PURE__ */ React3.createElement(DialogTitle, {
-    className: _default2.title
-  }, title), /* @__PURE__ */ React3.createElement(DialogContent, null, children));
+  }, /* @__PURE__ */ React$1.createElement(Typography, null, "  Back")), /* @__PURE__ */ React$1.createElement(DialogTitle, {
+    className: styles$1.title
+  }, title), /* @__PURE__ */ React$1.createElement(DialogContent, null, children));
 };
 
-// src/package/components/ConnectWeb3Modal.tsx
-import { Typography as Typography3 } from "@mui/material";
+const styles = ".connectButton {\n    width: 100%;\n}\n";
 
-// src/package/components/ConnectButton/ConnectButton.tsx
-import React4 from "react";
-import { Button as Button2 } from "@mui/material";
-
-// src/package/components/ConnectButton/ConnectButton.module.css
-var _default3 = {};
-
-// src/package/components/ConnectButton/ConnectButton.tsx
-var ConnectButton = (props) => {
+const ConnectButton = (props) => {
   const { icon, onClick, children } = props;
-  return /* @__PURE__ */ React4.createElement(Button2, __spreadValues({
+  return /* @__PURE__ */ React$1.createElement(Button, {
     variant: "contained",
     onClick,
-    className: _default3.connectButton
-  }, props), icon && /* @__PURE__ */ React4.createElement("img", {
+    className: styles.connectButton,
+    ...props
+  }, icon && /* @__PURE__ */ React$1.createElement("img", {
     style: { width: 24, marginRight: 8 },
     src: icon,
     alt: "wallet-icon"
   }), children);
 };
 
-// src/package/components/ConnectWeb3Modal.tsx
-import { useWeb3 as useWeb32 } from "@3rdweb/hooks";
-import { useState as useState2 } from "react";
-
-// src/package/components/MagicEmailModal.tsx
-import { useWeb3 } from "@3rdweb/hooks";
-import { TextField, Typography as Typography2 } from "@mui/material";
-import { useState } from "react";
-var MagicEmailModal = ({ open, setSelectedConnector }) => {
+const MagicEmailModal = ({ open, setSelectedConnector }) => {
   const { connectWallet } = useWeb3();
   const [isOpen, setIsOpen] = useState(open ?? false);
   const [email, setEmail] = useState();
@@ -152,8 +94,8 @@ var MagicEmailModal = ({ open, setSelectedConnector }) => {
     title: "Sign in with email",
     setBack: setSelectedConnector
   }, /* @__PURE__ */ React.createElement("div", {
-    className: _default2.content
-  }, /* @__PURE__ */ React.createElement(Typography2, {
+    className: styles$1.content
+  }, /* @__PURE__ */ React.createElement(Typography, {
     sx: { mt: 2, mb: 5 },
     variant: "description"
   }, "Enter your email to receive your sign in link. Your wallet will be created automagically \u{1FA84}"), /* @__PURE__ */ React.createElement(TextField, {
@@ -176,8 +118,7 @@ var MagicEmailModal = ({ open, setSelectedConnector }) => {
   }, "Get link")));
 };
 
-// src/package/connectors.ts
-var connectorsMetadata = {
+const connectorsMetadata = {
   injected: {
     icon: "metamask.png",
     name: "Metamask"
@@ -195,7 +136,7 @@ var connectorsMetadata = {
     name: "Email"
   }
 };
-var defaultConnectors = {
+const defaultConnectors = {
   injected: {},
   walletconnect: {},
   walletlink: {
@@ -205,10 +146,9 @@ var defaultConnectors = {
   }
 };
 
-// src/package/components/ConnectWeb3Modal.tsx
-var ConnectWeb3Modal = ({ open, setOpen }) => {
-  const { connectWallet } = useWeb32();
-  const [selectedConnector, setSelectedConnector] = useState2(void 0);
+const ConnectWeb3Modal = ({ open, setOpen }) => {
+  const { connectWallet } = useWeb3();
+  const [selectedConnector, setSelectedConnector] = useState(void 0);
   const connect = (connector) => {
     if (connector === "magic") {
       setSelectedConnector("magic");
@@ -229,8 +169,8 @@ var ConnectWeb3Modal = ({ open, setOpen }) => {
     setOpen,
     title: "Sign in with wallet"
   }, /* @__PURE__ */ React.createElement("div", {
-    className: _default2.content
-  }, /* @__PURE__ */ React.createElement(Typography3, {
+    className: styles$1.content
+  }, /* @__PURE__ */ React.createElement(Typography, {
     sx: { mt: 2, mb: 5 },
     variant: "description"
   }, "Connect your wallet to sign in. If you don't have a wallet, sign in with email."), Object.entries(connectorsMetadata).map(([key, { icon, name }], i) => /* @__PURE__ */ React.createElement(ConnectButton, {
@@ -243,14 +183,7 @@ var ConnectWeb3Modal = ({ open, setOpen }) => {
   }, name))));
 };
 
-// src/package/components/Web3Provider.tsx
-import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
-import React5 from "react";
-import { ThemeProvider } from "@mui/material";
-
-// src/package/styles/theme.tsx
-import { createTheme } from "@mui/material";
-var defaultTheme = createTheme({
+const defaultTheme = createTheme({
   palette: {
     primary: {
       main: "#1f1f1f"
@@ -400,31 +333,18 @@ var defaultTheme = createTheme({
   }
 });
 
-// src/package/components/Web3Provider.tsx
-var Web3Provider = (_a) => {
-  var _b = _a, {
-    theme = defaultTheme,
-    connectors = defaultConnectors,
-    children
-  } = _b, props = __objRest(_b, [
-    "theme",
-    "connectors",
-    "children"
-  ]);
-  return /* @__PURE__ */ React5.createElement(ThirdwebWeb3Provider, __spreadProps(__spreadValues({}, props), {
+const Web3Provider = ({
+  theme = defaultTheme,
+  connectors = defaultConnectors,
+  children,
+  ...props
+}) => {
+  return /* @__PURE__ */ React$1.createElement(ThirdwebWeb3Provider, {
+    ...props,
     connectors
-  }), /* @__PURE__ */ React5.createElement(ThemeProvider, {
+  }, /* @__PURE__ */ React$1.createElement(ThemeProvider, {
     theme
   }, children));
 };
 
-// src/package/hooks.tsx
-import { useWeb3 as useWeb33, useSwitchNetwork } from "@3rdweb/hooks";
-export {
-  ConnectWeb3Modal,
-  IconButton,
-  Web3Provider,
-  useSwitchNetwork,
-  useWeb33 as useWeb3
-};
-//# sourceMappingURL=index.mjs.map
+export { ConnectWeb3Modal, IconButton, Web3Provider };
