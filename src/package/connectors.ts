@@ -1,18 +1,23 @@
+import metamask from "./assets/metamask.png";
+import rainbow from "./assets/rainbow.png";
+import coinbase from "./assets/coinbase.png";
+import email from "./assets/email.png";
+
 export const connectorsMetadata = {
     injected: {
-        icon: "metamask.png",
+        icon: metamask,
         name: "Metamask"
     },
     walletconnect: {
-        icon: "rainbow.png",
+        icon: rainbow,
         name: "Rainbow or QR code"
     },
     walletlink: {
-        icon: "coinbase.png",
+        icon: coinbase,
         name: "Coinbase"
     },
     magic: {
-        icon: "email.png",
+        icon: email,
         name: "Email"
     },
 }
