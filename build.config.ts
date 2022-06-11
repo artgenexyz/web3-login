@@ -1,4 +1,5 @@
 import { defineBuildConfig } from "unbuild"
+import pkg from "./package.json"
 
 export default defineBuildConfig({
 
@@ -18,6 +19,6 @@ export default defineBuildConfig({
     // generates .d.ts declaration file
     declaration: true,
 
-    externals: ["react", "react-dom"],
+    externals: Object.keys(pkg.peerDependencies),
 
 })

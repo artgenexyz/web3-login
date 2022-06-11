@@ -1,5 +1,7 @@
 import { defineConfig } from "tsup"
 
+import pkg from "./package.json"
+
 export default defineConfig({
     entry: [
         "src/package/index.tsx"
@@ -13,5 +15,5 @@ export default defineConfig({
     splitting: false,
     sourcemap: true,
     clean: true,
-    external: [ "react", "react-dom" ],
+    external: Object.keys(pkg.peerDependencies),
 })
