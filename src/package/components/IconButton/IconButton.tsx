@@ -12,12 +12,11 @@ interface IconButtonProps extends ButtonProps {
 
 export const IconButton = (props: IconButtonProps) => {
   const { icon, onClick, orientation, children } = props;
-  const className = useMemo(() => handleStyles(), [orientation]);
 
-  function handleStyles() {
+  const className = useMemo(() => {
     const classNames = [styles.iconButton];
-  
-    switch(orientation) {
+
+    switch (orientation) {
       case "top-left":
         classNames.push(styles.topLeft);
         break;
@@ -28,8 +27,7 @@ export const IconButton = (props: IconButtonProps) => {
         break;
     }
     return classNames.join(" ");
-  };
-
+  }, [orientation]);
 
   return (
     <Button

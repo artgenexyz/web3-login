@@ -3,7 +3,7 @@ import { Modal } from "./Modal";
 import styles from "./Modal/Modal.module.css";
 import { TextField, Typography } from "@mui/material";
 import { ConnectButton } from "./ConnectButton";
-import { IconButton } from "./IconButton";
+// import { IconButton } from "./IconButton";
 import { useState } from "react";
 
 export const MagicEmailModal = ({ open, setSelectedConnector }) => {

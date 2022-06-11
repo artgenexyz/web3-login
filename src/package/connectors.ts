@@ -19,14 +19,14 @@ export const connectorsMetadata = {
 
 export const defaultConnectors = {
     injected: {},
-    magic: {
-        apiKey: "pk_...", // Your Magic.link api key
-        chainId: 1, // The chain ID you want to allow on Magic.link
-    },
+    // magic: {
+    //     apiKey: "pk_...", // Your Magic.link api key
+    //     chainId: 1, // The chain ID you want to allow on Magic.link
+    // },
     walletconnect: {},
     walletlink: {
         appName: "Buildship Example",
-        url: "https://buildship.dev",
+        url: "https://buildship.xyz",
         darkMode: false,
     },
 };
