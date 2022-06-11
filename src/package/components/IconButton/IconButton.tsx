@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import { Button } from "@mui/material";
-import path from "path";
 import styles from "./IconButton.module.css"
 import { ButtonProps } from "@mui/material/Button/Button";
 
@@ -14,7 +13,7 @@ interface IconButtonProps extends ButtonProps {
 export const IconButton = (props: IconButtonProps) => {
   const { icon, onClick, orientation, children } = props;
 
-  const iconPath = path.join('./', icon.src);
+  const iconPath = new URL(icon.src, import.meta.url);
 
   const className = useMemo(() => {
     const classNames = [styles.iconButton];
