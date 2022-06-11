@@ -3,6 +3,9 @@ import { IconButton } from "../IconButton";
 import { Dialog, DialogContent, DialogTitle, Typography } from "@mui/material";
 import styles from "./Modal.module.css"
 
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import CloseIcon from "@mui/icons-material/Close";
+
 interface ModalProps {
   open: boolean;
   setOpen: (x: boolean) => void;
@@ -34,7 +37,7 @@ export const Modal = ({
     > 
       <IconButton
         icon={{
-          src: "close.svg",
+          src: CloseIcon,
           alt: "close-icon"
         }}
         onClick={handleClose}
@@ -43,7 +46,7 @@ export const Modal = ({
       {setBack && (
         <IconButton
           icon={{
-            src: "chevron-left.svg",
+            src: ChevronLeftIcon,
             alt: "close-button"
           }}
           onClick={handleBack}
