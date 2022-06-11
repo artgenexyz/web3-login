@@ -13,7 +13,7 @@ export const ConnectButton = (props: ConnectButtonProps) => {
     const { icon, onClick, children } = props
 
     // const image = require(icon.src);
-    const iconPath = new URL(icon.src, import.meta.url).toString();
+    const iconPath = new URL(icon, import.meta.url).toString();
 
     return <Button
         variant="contained"
@@ -21,7 +21,7 @@ export const ConnectButton = (props: ConnectButtonProps) => {
         className={styles.connectButton}
         {...props}
     >
-        {icon && <img style={{width: 24, marginRight: 8}} src={iconPath} alt="wallet-icon"/>}
+        {icon && <img style={{width: 24, marginRight: 8}} src={icon.src} alt="wallet-icon"/>}
         {children}
     </Button>
 }

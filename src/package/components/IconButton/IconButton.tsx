@@ -16,8 +16,7 @@ export const IconButton = (props: IconButtonProps) => {
   // icon is "close.svg"
 
   // we need to import img
-  // const image = require(icon.src);
-  const iconPath = new URL(icon.src, import.meta.url).toString();
+  const image = icon.src;
 
   const className = useMemo(() => {
     const classNames = [styles.iconButton];
@@ -42,7 +41,7 @@ export const IconButton = (props: IconButtonProps) => {
       className={className}
       {...props}
     >
-      {icon && (<img style={{ width: 15, height: 15 }} src={iconPath} alt={icon.alt} />)}
+      {icon && (<img style={{ width: 15, height: 15 }} src={image} alt={icon.alt} />)}
       {children && children}
     </Button>
   )
