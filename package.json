@@ -38,8 +38,7 @@
     "dev": "react-scripts start",
     "build-preview": "react-scripts build",
     "build": "unbuild",
-    "prepare": "npm run build",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "eslintConfig": {
     "extends": [
