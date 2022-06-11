@@ -23,8 +23,8 @@
     "build",
     "README.md"
   ],
-  "main": "./build/index.mjs",
-  "module": "./build/index.mjs",
+  "main": "./build/index.js",
+  "module": "./build/index.js",
   "types": "./build/index.d.ts",
   "dependencies": {
     "@3rdweb/hooks": "1.9.0",

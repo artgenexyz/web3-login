@@ -8,8 +8,8 @@ export default defineConfig({
     ],
     outDir: "build",
     format: [
+        "esm",
         "cjs",
-        "esm"
     ],
     dts: true,
     splitting: false,
