@@ -21,7 +21,7 @@ export const ConnectButton = (props: ConnectButtonProps) => {
         className={styles.connectButton}
         {...props}
     >
-        {icon && <img style={{width: 24, marginRight: 8}} src={icon.src} alt="wallet-icon"/>}
+        {icon && <img style={{width: 24, marginRight: 8}} src={iconPath} alt="wallet-icon"/>}
         {children}
     </Button>
 }
