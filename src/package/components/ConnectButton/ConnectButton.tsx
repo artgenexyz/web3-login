@@ -12,8 +12,8 @@ interface ConnectButtonProps extends ButtonProps {
 export const ConnectButton = (props: ConnectButtonProps) => {
     const { icon, onClick, children } = props
 
-    const image = require(icon.src);
-    const iconPath = new URL(icon.src, import.meta.url);
+    // const image = require(icon.src);
+    const iconPath = new URL(icon.src, import.meta.url).toString();
 
     return <Button
         variant="contained"
