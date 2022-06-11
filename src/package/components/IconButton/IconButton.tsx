@@ -38,7 +38,7 @@ export const IconButton = (props: IconButtonProps) => {
       className={className}
       {...props}
     >
-      {icon && (<img style={{ width: 15, height: 15 }} src={iconPath} alt={icon.alt} />)}
+      {icon && (<img style={{ width: 15, height: 15 }} src={iconPath.toString()} alt={icon.alt} />)}
       {children && children}
     </Button>
   )
