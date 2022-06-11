@@ -13,8 +13,6 @@ interface IconButtonProps extends ButtonProps {
 export const IconButton = (props: IconButtonProps) => {
   const { icon, onClick, orientation, children } = props;
 
-  const image = require(icon.src);
-
   const className = useMemo(() => {
     const classNames = [styles.iconButton];
 
@@ -38,7 +36,7 @@ export const IconButton = (props: IconButtonProps) => {
       className={className}
       {...props}
     >
-      {icon && (<img style={{ width: 15, height: 15 }} src={image} alt={icon.alt} />)}
+      {icon && (<img style={{ width: 15, height: 15 }} src={icon.src} alt={icon.alt} />)}
       {children && children}
     </Button>
   )
