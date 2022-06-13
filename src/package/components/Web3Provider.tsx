@@ -8,14 +8,15 @@ import { defaultTheme } from "../styles";
 export interface Web3ProviderProps extends Omit<ThirdwebWeb3ProviderProps, "connectors"> {
     theme?: Theme;
     connectors?: IThirdwebContext["connectors"];
+    children?: React.ReactNode;
 }
 
-export const Web3Provider: React.FC<Web3ProviderProps> = ({
+export const Web3Provider = ({
     theme = defaultTheme,
     connectors = defaultConnectors,
     children,
     ...props
-}) => {
+}: Web3ProviderProps) => {
     return (
     <ThirdwebWeb3Provider {...props} connectors={connectors}>
         <ThemeProvider theme={theme}>
