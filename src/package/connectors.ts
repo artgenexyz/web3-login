@@ -5,19 +5,19 @@ import email from "./assets/email.png";
 
 export const connectorsMetadata = {
     injected: {
-        icon: require(metamask),
+        icon: metamask,
         name: "Metamask"
     },
     walletconnect: {
-        icon: require(rainbow),
+        icon: rainbow,
         name: "Rainbow or QR code"
     },
     walletlink: {
-        icon: require(coinbase),
+        icon: coinbase,
         name: "Coinbase"
     },
     magic: {
-        icon: require(email),
+        icon: email,
         name: "Email"
     },
 }
