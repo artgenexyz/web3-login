@@ -11,6 +11,7 @@ export default defineConfig({
         "esm",
         "cjs",
     ],
+    loader: { '.png': 'base64', '.svg': 'base64' },
     dts: true,
     splitting: false,
     sourcemap: true,
