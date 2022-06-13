@@ -7,7 +7,6 @@
       "esnext"
     ],
     "declaration": true,
-    "declarationDir": "build/types",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,7 +19,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
