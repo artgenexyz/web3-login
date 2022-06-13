@@ -1,5 +1,7 @@
 import { defineConfig } from "tsup"
 
+import cssModulesPlugin from "esbuild-css-modules-plugin";
+
 import pkg from "./package.json"
 
 export default defineConfig({
@@ -17,4 +19,7 @@ export default defineConfig({
     sourcemap: true,
     clean: true,
     external: Object.keys(pkg.peerDependencies),
+    esbuildPlugins: [
+        cssModulesPlugin()
+    ],
 })
