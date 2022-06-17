@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
-import './App.css';
-import { useWeb3, ConnectWeb3Modal, Web3Provider } from "./package";
+import React from 'react';
+import { Web3Provider, ConnectWallet, AddressView } from "./package";
 import { defaultConnectors } from "./package/connectors";
 import { defaultTheme } from "./package/styles/theme";
 
-const AddressView = () => {
-  const { address } = useWeb3();
+import './App.css';
 
-  return <div>{address ? `Connected to ${address}` : 'Not connected'}</div>;
-}
 function App() {
-    const [open, setOpen] = useState(true);
-
     return (
         <Web3Provider
 					theme={defaultTheme}
 					supportedChainIds={[1, 4]}
 					connectors={defaultConnectors}
         >
-          <ConnectWeb3Modal open={open} setOpen={setOpen} />
+          {/* autoOpen will pop the modal on page load */}
+          <ConnectWallet autoOpen={true} />
 
           <div className="App">
             <header className="App-header">
-              <AddressView />
+              {/* AddressView should be used inside Web3Provider so that it picks up address */}
+              <AddressView isShort={true} />
             </header>
           </div>
         </Web3Provider>
