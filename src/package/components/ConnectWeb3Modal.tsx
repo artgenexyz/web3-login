@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { Modal } from "./Modal";
-import { Typography } from "@mui/material";
-import styles from "./Modal/Modal.module.css"
-import { ConnectButton } from "./ConnectButton";
+import React, { useState } from "react"
+import { Typography } from "@mui/material"
 import { useWeb3 } from "@3rdweb/hooks"
-import { MagicEmailModal } from "./MagicEmailModal";
-import { connectorsMetadata } from "../connectors";
+
+import { MagicEmailModal } from "./MagicEmailModal"
+import { ConnectButton } from "./ConnectButton"
+import { Modal } from "./Modal"
+import styles from "./Modal/Modal.module.css"
+
+import { connectorsMetadata } from "../connectors"
 
 export const ConnectWeb3Modal = ({ open, setOpen }) => {
   const { connectWallet } = useWeb3()
@@ -19,7 +21,7 @@ export const ConnectWeb3Modal = ({ open, setOpen }) => {
     connectWallet(connector).then(() => {
       setOpen(false)
     })
-  };
+  }
 
 
   if (selectedConnector === "magic") {
@@ -28,7 +30,7 @@ export const ConnectWeb3Modal = ({ open, setOpen }) => {
         open={true}
         setSelectedConnector={setSelectedConnector}
       />
-    );
+    )
   }
 
   return (
@@ -55,7 +57,7 @@ export const ConnectWeb3Modal = ({ open, setOpen }) => {
         ))}
       </div>
     </Modal>
-  );
+  )
 }
 
 export default ConnectWeb3Modal

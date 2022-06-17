@@ -13,7 +13,7 @@ function App() {
 					connectors={defaultConnectors}
         >
           {/* autoOpen will pop the modal on page load */}
-          <ConnectWallet autoOpen={true} />
+          <ConnectWallet autoOpen={true} showDisconnect={false} />
 
           <div className="App">
             <header className="App-header">

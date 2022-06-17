@@ -1,8 +1,8 @@
-import React from "react";
-import { useWeb3 } from "../";
+import React from "react"
+import { useWeb3 } from "../"
 
 type Props = {
-    isShort: boolean
+    isShort?: boolean
 }
 
 /**
@@ -12,7 +12,7 @@ type Props = {
  * @returns {JSX.Element}
  */
 export const AddressView = ({ isShort = true }: Props): JSX.Element => {
-    const { address } = useWeb3();
+    const { address } = useWeb3()
 
     if (!address) return null
 
@@ -22,7 +22,7 @@ export const AddressView = ({ isShort = true }: Props): JSX.Element => {
         {isShort ? `${address.slice(0, 4)}...${address.slice(-4)}` : address}
     </>
 
-    // return <div>{address ? `Connected to ${address}` : 'Not connected'}</div>;
+    // return <div>{address ? `Connected to ${address}` : 'Not connected'}</div>
 }
 
-export default AddressView;
+export default AddressView
