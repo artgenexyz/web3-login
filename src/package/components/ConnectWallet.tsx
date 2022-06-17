@@ -22,17 +22,18 @@ export const ConnectWallet = ({ autoOpen = false, showDisconnect = false, render
 
     const [open, setOpen] = useState(autoOpen)
 
-    const { disconnectWallet } = useWeb3()
+    const { address, disconnectWallet } = useWeb3()
 
     return <>
         <ConnectWeb3Modal open={open} setOpen={setOpen} />
 
-        {renderButton
-            ? renderButton({ text: "Connect Wallet", onClick: () => setOpen(true) })
-            : <button onClick={() => setOpen(true)}>Connect Wallet</button>
-        }
+        {!address && (
+            renderButton
+                ? renderButton({ text: "Connect Wallet", onClick: () => setOpen(true) })
+                : <button onClick={() => setOpen(true)}>Connect Wallet</button>
+        )}
 
-        {showDisconnect && (
+        {showDisconnect && address && (
             renderButton
                 ? renderButton({ text: "Disconnect Wallet", onClick: () => disconnectWallet() })
                 : <button onClick={() => disconnectWallet()}>Disconnect Wallet</button>
