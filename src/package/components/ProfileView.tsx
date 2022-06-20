@@ -19,7 +19,7 @@ type Props = {
 }
 
 const defaultRenderButton = ({ children, onClick }: ButtonProps) => (
-    <Button variant="text" onClick={onClick} sx={{ px: 0, mx: 2, color: "rgba(0,0,0,0.6)" }}>
+    <Button variant="text" onClick={onClick} sx={{ px: 3, mx: 2 }}>
         {children}
     </Button>
 )
@@ -61,7 +61,7 @@ export const ProfileView = ({ autoOpen = false, showDisconnect = true, renderBut
 
         {/* <Box > */}
         {address && <Typography
-            sx={{ py: 3, cursor: "pointer", color: "rgba(0,0,0,0.6)" }}
+            sx={{ cursor: "pointer", color: "rgba(0,0,0,0.6)" }}
             fontWeight={500}
             onClick={copyAddress}
         >
@@ -69,22 +69,11 @@ export const ProfileView = ({ autoOpen = false, showDisconnect = true, renderBut
         </Typography>}
 
         {showDisconnect && address && (renderButton({
-            children: <LogoutOutlined fontSize="small" />,
+            children: <LogoutOutlined />,
             onClick: () => disconnectWallet(),
         }))}
 
     </Box>
 }
-
-
-// renderButton
-//     ? renderButton({
-//         children: <LogoutOutlined fontSize="small" />,
-//         onClick: () => disconnectWallet()
-//     })
-//     : <button onClick={() => disconnectWallet()}>
-//         <LogoutOutlined fontSize="small" />
-//     </button>
-// )}
 
 export default ProfileView
