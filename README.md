@@ -22,7 +22,7 @@ npm i @buildship/web3-login
 Use it in your code:
 
 ```javascript
-import { Web3Provider, ConnectWeb3Modal, useWeb3 } from "@buildship/web3-login";
+import { Web3Provider, ConnectWallet, AddressView } from "@buildship/web3-login";
 
 // Wallets that you want to support
 const connectors = {
@@ -43,19 +43,23 @@ const connectors = {
 
 const App = () => {
     const { address } = useWeb3()
-    const [isOpen, setIsOpen] = useState(false)
-    
+
     return <Web3Provider
         supportedChainIds={[1, 4]}
         connectors={connectors}>
-            Connected address: {address}    
-            <button onClick={() => setIsOpen(true)}>
-              Connect wallet
+
+        {/* AddressView should be used inside Web3Provider so that it picks up address */}
+        Connected address: <AddressView isShort={true} />
+
+        {/* autoOpen will pop the modal on page load */}
+        <ConnectWallet autoOpen={false}
+            renderButton={({ text, onClick }) => (
+            <button className="my-button-class" onClick={onClick}>
+                {text}
             </button>
-            <ConnectWeb3Modal 
-              open={isOpen} 
-              setOpen={setIsOpen}
-            /> 
+            )}
+        />
+
     </Web3Provider>
 }
 

@@ -12,14 +12,26 @@ function App() {
 					supportedChainIds={[1, 4]}
 					connectors={defaultConnectors}
         >
-          {/* autoOpen will pop the modal on page load */}
-          <ConnectWallet autoOpen={true} showDisconnect={false} />
 
           <div className="App">
             <header className="App-header">
               {/* AddressView should be used inside Web3Provider so that it picks up address */}
               <AddressView isShort={true} />
+
+              {/* autoOpen will pop the modal on page load */}
+              <ConnectWallet autoOpen={false} renderButton={({ text, onClick }) => (
+                <button className="my-button-class" onClick={onClick}>
+                  {text}
+                </button>
+              )} />
+
             </header>
+
+            <div>
+
+              Connected address: <AddressView isShort={false} />
+
+            </div>
           </div>
         </Web3Provider>
     );
