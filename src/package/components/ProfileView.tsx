@@ -19,7 +19,7 @@ type Props = {
 }
 
 const defaultRenderButton = ({ children, onClick }: ButtonProps) => (
-    <Button variant="text" onClick={onClick} sx={{ px: 3, mx: 2 }}>
+    <Button variant="text" onClick={onClick} sx={{ px: 3, mx: 2, color: "rgba(0,0,0,0.6)" }}>
         {children}
     </Button>
 )
@@ -51,7 +51,7 @@ export const ProfileView = ({ autoOpen = false, showDisconnect = true, renderBut
         window.alert("Address copied to clipboard")
     }
 
-    return <Box display="flex" alignItems="center">
+    return <Box display="flex" alignItems="center" sx={{ color: "rgba(0,0,0,0.6)" }}>
         <ConnectWeb3Modal open={open} setOpen={setOpen} />
 
         {!address && (renderButton({
@@ -61,7 +61,7 @@ export const ProfileView = ({ autoOpen = false, showDisconnect = true, renderBut
 
         {/* <Box > */}
         {address && <Typography
-            sx={{ cursor: "pointer", color: "rgba(0,0,0,0.6)" }}
+            sx={{ cursor: "pointer" }}
             fontWeight={500}
             onClick={copyAddress}
         >
