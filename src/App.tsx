@@ -1,5 +1,5 @@
 import React from 'react';
-import { Web3Provider, ConnectWallet, AddressView } from "./package";
+import { Web3Provider, ProfileView, AddressView } from "./package";
 import { defaultConnectors } from "./package/connectors";
 import { defaultTheme } from "./package/styles/theme";
 
@@ -15,20 +15,15 @@ function App() {
 
           <div className="App">
             <header className="App-header">
-              {/* AddressView should be used inside Web3Provider so that it picks up address */}
-              <AddressView isShort={true} />
 
               {/* autoOpen will pop the modal on page load */}
-              <ConnectWallet autoOpen={false} renderButton={({ text, onClick }) => (
-                <button className="my-button-class" onClick={onClick}>
-                  {text}
-                </button>
-              )} />
+              <ProfileView autoOpen={false} />
 
             </header>
 
             <div>
 
+              {/* AddressView should be used inside Web3Provider so that it picks up address */}
               Connected address: <AddressView isShort={false} />
 
             </div>

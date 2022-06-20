@@ -22,7 +22,6 @@ export const AddressView = ({ isShort = true }: Props): JSX.Element => {
         {isShort ? `${address.slice(0, 4)}...${address.slice(-4)}` : address}
     </>
 
-    // return <div>{address ? `Connected to ${address}` : 'Not connected'}</div>
 }
 
 export default AddressView

@@ -48,14 +48,11 @@ const App = () => {
         supportedChainIds={[1, 4]}
         connectors={connectors}>
 
-        {/* AddressView should be used inside Web3Provider so that it picks up address */}
-        Connected address: <AddressView isShort={true} />
-
         {/* autoOpen will pop the modal on page load */}
-        <ConnectWallet autoOpen={false}
-            renderButton={({ text, onClick }) => (
+        <ProfileView autoOpen={false}
+            renderButton={({ children, onClick }) => (
             <button className="my-button-class" onClick={onClick}>
-                {text}
+                {children}
             </button>
             )}
         />
