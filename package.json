@@ -1,7 +1,7 @@
 {
   "name": "@buildship/web3-login",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.3.2-beta4",
   "description": "UX-focused web3 auth for your React app",
   "author": "Buildship",
   "keywords": [
@@ -30,6 +30,7 @@
     "@3rdweb/hooks": "1.9.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.3"
   },
   "peerDependencies": {
